@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Room Map Upload Portal",
+  "name": "Room Map Upload App for TimeTable Division @BPHC",
   "icons": [
     {
       "src": "favicon.ico",

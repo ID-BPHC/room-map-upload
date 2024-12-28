@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
-import { signOut } from "firebase/auth";
-import { auth } from "./firebase";
 import Login from "./Login"; // Import Login component
 import RoomMap from "./RoomMap"; // Import RoomMap component
 
 export default function App() {
   const [user, setUser] = useState(null);
 
-  const handleLogout = async () => {
-    await signOut(auth);
-    setUser(null);
+  // Handle logout by clearing the user state
+  const handleLogout = () => {
+    setUser(null); // Simply clear the user state
   };
 
   return (
@@ -24,9 +22,9 @@ export default function App() {
           path="/roommap"
           element={
             !user ? (
-              <Login setUser={setUser} />
+              <Login setUser={setUser} /> // Show login if no user is set
             ) : (
-              <RoomMap user={user} handleLogout={handleLogout} />
+              <RoomMap user={user} handleLogout={handleLogout} /> // Show RoomMap if user is logged in
             )
           }
         />

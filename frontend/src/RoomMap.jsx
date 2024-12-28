@@ -98,7 +98,7 @@ const RoomMap = ({ user, handleLogout }) => {
   return (
     <div className="flex flex-col items-center justify-start h-screen bg-gray-200 p-4">
       <h1 className="text-3xl font-bold text-slate-800">
-        Welcome, {user.displayName}!
+        Welcome, Timetable Division @BPHC!
       </h1>
       <button
         onClick={handleLogout}
