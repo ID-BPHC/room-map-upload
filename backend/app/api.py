@@ -12,7 +12,7 @@ api_router = APIRouter()
 UPLOAD_DIR = "uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
-@api_router.post("/api/upload")
+@api_router.post("/api/roommap/upload")
 async def upload_file(file: UploadFile = File(...)):
     try:
         # Save file to disk
@@ -26,7 +26,7 @@ async def upload_file(file: UploadFile = File(...)):
 
 
 # Endpoint to extract room data from the uploaded PDF based on page ranges
-@api_router.post("/api/extractRooms")
+@api_router.post("/api/roommap/extractRooms")
 async def extract_rooms(extract_req: ExtractReq):
     try:
         filename = f"uploads/{extract_req.filename}"
@@ -61,7 +61,7 @@ async def extract_rooms(extract_req: ExtractReq):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error extracting rooms: {str(e)}")
    
-@api_router.get("/api/ping")
+@api_router.get("/api/roommap/ping")
 async def test():
     try:
         return {"message": "Online"}

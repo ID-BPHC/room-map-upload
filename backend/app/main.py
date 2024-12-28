@@ -9,7 +9,7 @@ app = FastAPI()
 # CORS settings to allow frontend to interact with the backend
 origins = [
     "http://localhost:3000",  # Replace with your frontend URL
-    "https://td.bits-hyderabad.ac.in/"
+    "https://td.bits-hyderabad.ac.in/roommap"
 ]
 
 app.add_middleware(
