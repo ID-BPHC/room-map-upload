@@ -63,7 +63,7 @@ const RoomMap = ({ user, handleLogout }) => {
 
     try {
       const uploadResponse = await axios.post(
-        "http://localhost:8000/api/upload",
+        "http://localhost:8000/api/roommap/upload",
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
@@ -76,7 +76,7 @@ const RoomMap = ({ user, handleLogout }) => {
         }));
 
         const extractResponse = await axios.post(
-          "http://localhost:8000/api/extractRooms",
+          "http://localhost:8000/api/roommap/extractRooms",
           {
             filename: uploadResponse.data.filename, // Ensure filename is included here
             page_ranges: pageRangeData, // Ensure page ranges are correctly formatted
